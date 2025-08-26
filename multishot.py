@@ -100,5 +100,20 @@ def chat():
 		except Exception as e:
 			print("Error communicating with Gemini:", e)
 
+
+def chain_of_thought_prompt(question):
+    prompt = (
+        f"Let's solve this step by step.\n"
+        f"Question: {question}\n"
+        f"Answer:"
+    )
+    return prompt
+
+# Example usage with Gemini/OpenAI API:
+question = "If a train travels 60 miles per hour for 3 hours, how far does it go?"
+prompt = chain_of_thought_prompt(question)
+
+print(prompt)
+# Send 'prompt' to your LLM API for a step-by-step answer.
 if __name__ == "__main__":
 	chat()
