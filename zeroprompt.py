@@ -55,5 +55,25 @@ def chat():
         except Exception as e:
             print("Error communicating with Gemini:", e)
 
+
+
+def generate_until_stop(text, stop_sequence):
+    result = ""
+    for line in text.splitlines():
+        if stop_sequence in line:
+            # Stop when the stop sequence is found
+            break
+        result += line + "\n"
+    return result.strip()
+
+# Example usage:
+text = """Hello, how are you?
+This is a test.
+STOP
+This should not appear."""
+stop_sequence = "STOP"
+output = generate_until_stop(text, stop_sequence)
+print(output)
+
 if __name__ == "__main__":
     chat()
