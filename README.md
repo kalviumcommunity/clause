@@ -24,3 +24,5 @@ Add support for advanced prompting techniques (few-shot, system prompts, etc.).
 Enable conversation history and user authentication.
 Deploy the app for public use.
 This project is a starting point for building a more advanced AI assistant. Stay tuned for updates!
+
+...
