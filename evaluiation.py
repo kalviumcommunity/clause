@@ -39,5 +39,32 @@ prompt = structured_output_prompt(question)
 print(prompt)
 # Send 'prompt' to your LLM API for a structured (JSON) response.
 
+# ...existing code...
+
+def build_prompt(user_message):
+    # RTFC Framework:
+    # Role: You are a helpful AI assistant named Genius.
+    # Task: Answer user questions accurately and politely.
+    # Format: Respond in plain English, concise and clear.
+    # Constraints: Avoid speculation, use factual information only.
+
+    system_prompt = (
+        "You are Genius, a helpful AI assistant. "
+        "Your job is to answer user questions accurately and politely. "
+        "Respond in plain English, concise and clear. "
+        "Avoid speculation and use only factual information."
+    )
+    prompt = f"{system_prompt}\nUser: {user_message}\nAI:"
+    return prompt
+
+# Example usage:
+user_message = "Who is the president of India?"
+prompt = build_prompt(user_message)
+print(prompt)
+# Send 'prompt' to your LLM API for a response.
+
+# ...existing code...
+
+
 if __name__ == "__main__":
     pytest.main()
